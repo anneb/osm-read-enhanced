@@ -43,7 +43,7 @@ function describeTest(filePath, describeFilePathSpecificTests){
         });
 
         it('then first parsed node has id 319408586', function(){
-            params.parsedNodes[0].id.should.be.equal('319408586');
+            params.parsedNodes[0].id.toString().should.be.equal('319408586');
         });
 
         it('then first parsed node has lat 51.5074089', function(){
@@ -86,8 +86,8 @@ function describeTest(filePath, describeFilePathSpecificTests){
 
             nodeRefs = params.parsedWays[0].nodeRefs;
 
-            nodeRefs[0].should.be.equal('304994979');
-            nodeRefs[1].should.be.equal('319408587');
+            nodeRefs[0].toString().should.be.equal('304994979');
+            nodeRefs[1].toString().should.be.equal('319408587');
         });
 
         it('then first relation\'s attributes are parsed', function(){
@@ -118,7 +118,7 @@ function describeTest(filePath, describeFilePathSpecificTests){
             nodeMember = params.parsedRelations[0].members[0];
 
             nodeMember.type.should.be.equal('node');
-            nodeMember.ref.should.be.equal('319408586');
+            nodeMember.ref.toString().should.be.equal('319408586');
             nodeMember.role.should.be.equal('');
         });
 
@@ -128,7 +128,7 @@ function describeTest(filePath, describeFilePathSpecificTests){
             nodeMember = params.parsedRelations[0].members[1];
 
             nodeMember.type.should.be.equal('way');
-            nodeMember.ref.should.be.equal('27776903');
+            nodeMember.ref.toString().should.be.equal('27776903');
             nodeMember.role.should.be.equal('');
         });
 

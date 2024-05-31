@@ -122,7 +122,7 @@ describe('pbf read', function(){
                 });
 
                 it('then first node has id 319408586', function(){
-                    pg.nodesView.get(0).id.should.be.equal('319408586');
+                    pg.nodesView.get(0).id.toString().should.be.equal('319408586');
                 });
 
                 it('then first node has timestamp 1229476722000 (2008-12-17T01:18:42Z)', function(){
@@ -138,7 +138,7 @@ describe('pbf read', function(){
                 });
 
                 it('then second node has id 319408587', function(){
-                    pg.nodesView.get(1).id.should.be.equal('319408587');
+                    pg.nodesView.get(1).id.toString().should.be.equal('319408587');
                 });
 
                 it('then third node has tag amenity=cafe', function(){
@@ -177,7 +177,7 @@ describe('pbf read', function(){
                     });
 
                     it('then way has id 27776903', function(){
-                        way.id.should.be.equal('27776903');
+                        way.id.toString().should.be.equal('27776903');
                     });
 
                     it('then way has version 3', function(){
@@ -209,11 +209,11 @@ describe('pbf read', function(){
                     });
 
                     it('then first way node ref has id 304994979', function(){
-                        way.nodeRefs[0].should.be.equal('304994979');
+                        way.nodeRefs[0].toString().should.be.equal('304994979');
                     });
 
                     it('then second way node ref has id 319408587', function(){
-                        way.nodeRefs[1].should.be.equal('319408587');
+                        way.nodeRefs[1].toString().should.be.equal('319408587');
                     });
 
                 });
