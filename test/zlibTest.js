@@ -8,7 +8,7 @@ describe('zlib', function(){
 
         str = 'lorem ipsum dolor sit amet';
 
-        zlib.deflate(new Buffer(str), function(err, compressed){
+        zlib.deflate(Buffer.from(str), function(err, compressed){
             zlib.inflate(compressed, function(err, output){
                 output.toString().should.be.equal(str);
 
@@ -22,7 +22,7 @@ describe('zlib', function(){
 
         str = 'lorem ipsum dolor sit amet';
 
-        zlib.deflateRaw(new Buffer(str), function(err, compressed){
+        zlib.deflateRaw(Buffer.from(str), function(err, compressed){
             zlib.inflateRaw(compressed, function(err, output){
                 output.toString().should.be.equal(str);
 
