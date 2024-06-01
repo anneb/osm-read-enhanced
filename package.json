@@ -28,6 +28,7 @@
     "scripts": {
         "test": "mocha test",
         "test_deprecated": "node --trace-deprecation node_modules/mocha/bin/_mocha",
+        "buildesm": "rollup -c",
         "buildProto": "pbjs -t static-module -w commonjs lib/proto/fileformat.proto lib/proto/osmformat.proto > lib/proto/index.js",
         "browserify": "browserify ./lib/pbfParser.js --bare -s=pbfParser -d -p [minifyify --map osm-read-pbf.map.json --output osm-read-pbf.map.json] -o osm-read-pbf.js",
         "browserifyDebug": "browserify ./lib/pbfParser.js --bare -s=pbfParser -d -o osm-read-pbf.js"
@@ -45,10 +46,17 @@
         "zlibjs": "0.3.1"
     },
     "devDependencies": {
+        "@babel/core": "^7.24.6",
+        "@babel/preset-env": "^7.24.6",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-commonjs": "^25.0.8",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^15.2.3",
         "browserify": "^17.0.0",
         "bytebuffer": "5.0.1",
         "minifyify": "7.3.5",
         "mocha": "10.1.0",
+        "rollup": "^2.79.1",
         "should": "13.2.3"
     },
     "licenses": [
